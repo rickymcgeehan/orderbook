@@ -1,0 +1,82 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb",
+        "airbnb-typescript",
+        "airbnb/hooks",
+        "plugin:import/recommended",
+        "plugin:jsx-a11y/recommended",
+        "next/core-web-vitals"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "page": true,
+        "browser": true,
+        "context": true,
+        "jestPuppeteer": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "project": "./tsconfig.json"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "react",
+        "react-hooks"
+    ],
+    "rules": {
+        "indent": "off",
+        "comma-dangle": "off",
+        "max-len": [
+            "warn",
+            {
+                "code": 120,
+                "tabWidth": 4,
+                "comments": 120,
+                "ignoreUrls": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreRegExpLiterals": true
+            }
+        ],
+        "object-curly-newline": "off",
+        "nonblock-statement-body-position": ["warn", "below"],
+        "@typescript-eslint/indent": ["warn", 4, { "SwitchCase": 1, "MemberExpression": 0 }],
+        "@typescript-eslint/comma-dangle": "off",
+        "react/jsx-indent": ["warn", 4, { "checkAttributes": true, "indentLogicalExpressions": true }],
+        "react/jsx-indent-props": ["warn", 4],
+        "react/jsx-no-duplicate-props": ["error", { "ignoreCase": false }],
+        "react/jsx-one-expression-per-line": ["warn", { "allow": "single-child" }],
+        "react/jsx-props-no-spreading": [
+            "error",
+            {
+                "html": "enforce",
+                "custom": "enforce",
+                "explicitSpread": "ignore",
+                "exceptions": ["Component"]
+            }
+        ],
+        "react/require-default-props": ["error", { "ignoreFunctionalComponents": true }],
+        "jsx-a11y/label-has-associated-control": ["error", { "controlComponents": ["TextField"] }]
+    }
+}
